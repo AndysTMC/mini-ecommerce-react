@@ -1,0 +1,19 @@
+
+.h-100 {
+    overflow-y: scroll;
+}
+
+.form-field {
+    color: white;
+    height: 35px !important;
+    background-color: transparent;
+    text-align: center;
+}
+
+.form-field:focus {
+    border: none !important;
+}
+
+.rounded {
+    border-radius: 10px !important;
+}

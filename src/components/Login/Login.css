@@ -1,0 +1,39 @@
+
+.h-100 {
+    overflow-y: scroll;
+}
+
+.h-100::-webkit-scrollbar {
+    display: none;
+}
+
+.form-field {
+    color: white;
+    height: 35px !important;
+    width: 250px;
+    background-color: transparent;
+    text-align: center;
+}
+
+.form-field:focus {
+    border: none !important;
+}
+
+.rounded {
+    border-radius: 10px !important;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 400px) {
+    .label-text {
+        font-size: 1rem;
+        margin-right: 0;
+    }
+    .input-wrapper {
+        width: 100%;
+    }
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

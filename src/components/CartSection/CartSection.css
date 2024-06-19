@@ -1,0 +1,30 @@
+
+
+.cart-heading-container {
+    height: 40px;
+}
+
+.cart-product {
+    height: 175px;
+}
+
+.cart-product-other {
+    height: 225px;
+}
+
+.lrbtn {
+    width: 1px;
+}
+
+.image-container {
+    min-width: 80px;
+    max-width: 150px;
+}
+
+.btn-grey {
+    background-color: #dcdcdc;
+}
+
+.btn-grey:hover {
+    background-color: #dcdcdc;
+}
