@@ -11,9 +11,7 @@ const fetchAllProducts = async () => {
 }
 
 const fetchProduct = async (p_id) => {
-    const response = await axios.get(`${backendUrl}/product/fetch/`, {
-        body: JSON.stringify({ p_id: p_id }),
-    });
+    const response = await axios.get(`${backendUrl}/product/fetch/`, { p_id: p_id });
     return response.data;
 }
 
