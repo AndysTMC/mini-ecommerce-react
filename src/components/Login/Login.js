@@ -1,7 +1,6 @@
 import React from "react";
 import withRouter from "../../hocs/withRouter";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import Cookies from "js-cookie";
 import "./Login.css";
 import * as Yup from "yup";
 import { userLogin } from "../../api_services/userApiService";
@@ -109,7 +108,6 @@ class Login extends React.Component {
 		this.setState({ status: "loading" });
 		userLogin(userObj).then((data) => {
 			if (data.login === "success") {
-				const token = data.token;
 				this.setState({ status: "success" });
 			} else {
 				this.setState({ status: "error" });
