@@ -21,7 +21,7 @@ const userRegister = async (userObj) => {
 };
 
 const userLogout = async () => {
-	const response = await axios.post(`${backendUrl}/user/logout/`);
+	const response = await axios.get(`${backendUrl}/user/logout/`);
 	return response.data;
 }
 
