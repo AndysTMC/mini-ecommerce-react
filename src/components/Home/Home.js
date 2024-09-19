@@ -1,5 +1,4 @@
 import React from "react";
-import Cookies from 'js-cookie';
 import { userAuth, userLogout } from "../../api_services/userApiService";
 import withRouter from "../../hocs/withRouter";
 import "./Home.css";
