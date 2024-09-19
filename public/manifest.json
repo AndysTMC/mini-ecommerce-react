@@ -1,6 +1,5 @@
 {
-  "short_name": "Mini-Ecommerce",
-  "name": "A simple mini e-commerce",
+  "name": "Mini Ecommerce",
   "icons": [
     {
       "src": "mini-ecommerce.png",
