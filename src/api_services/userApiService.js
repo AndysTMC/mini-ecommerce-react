@@ -20,4 +20,9 @@ const userRegister = async (userObj) => {
 	return response.data;
 };
 
-export { userLogin, userAuth, userRegister };
+const userLogout = async () => {
+	const response = await axios.post(`${backendUrl}/user/logout/`);
+	return response.data;
+}
+
+export { userLogin, userAuth, userRegister, userLogout };

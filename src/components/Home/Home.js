@@ -1,6 +1,6 @@
 import React from "react";
 import Cookies from 'js-cookie';
-import { userAuth } from "../../api_services/userApiService";
+import { userAuth, userLogout } from "../../api_services/userApiService";
 import withRouter from "../../hocs/withRouter";
 import "./Home.css";
 import Navbar from "../Navbar/Navbar";
@@ -102,8 +102,11 @@ class Home extends React.Component {
         }
     }
     logout = () => {
-        Cookies.remove('token');
-        this.setState({ loggedIn: false, cart: [] })
+        userLogout().then((data) => {
+            if (data.logout === 'success') {
+                this.setState({ loggedIn: false });
+            }
+        });
     }
 }
 
