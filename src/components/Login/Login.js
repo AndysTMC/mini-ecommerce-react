@@ -72,8 +72,6 @@ class Login extends React.Component {
         userLogin(userObj).then((data) => {
             if (data.login === 'success') {
                 const token = data.token;
-                Cookies.set('token', token, { expires: 1 });
-                console.log("token set")
                 this.setState({ status: 'success' })
             } else {
                 this.setState({ status: 'error' })
