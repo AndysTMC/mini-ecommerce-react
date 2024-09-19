@@ -30,6 +30,7 @@ class Home extends React.Component {
     handleCartFetch = () => {
         if(!this.state.loggedIn) return this.props.navigate('/login', { replace: true });
         fetchCart().then((data) => {
+            console.log(data);
             this.setState({ cart: data.cart ? data.cart : [] });
         })
 
@@ -83,6 +84,9 @@ class Home extends React.Component {
     componentDidUpdate() {
         if (this.state.status === 'success') {
             this.props.navigate('/login', { replace: true })
+        }
+        if (this.state.loggedIn) {
+            this.handleCartFetch();
         }
     }
     componentDidMount() {
