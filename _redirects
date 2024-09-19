@@ -1,0 +1,4 @@
+# Redirects from what the browser requests to what we serve
+/about    /index.html   200
+/login    /index.html   200
+/register /index.html   200
