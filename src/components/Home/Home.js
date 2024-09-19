@@ -30,7 +30,6 @@ class Home extends React.Component {
     handleCartFetch = () => {
         if(!this.state.loggedIn) return this.props.navigate('/login', { replace: true });
         fetchCart().then((data) => {
-            console.log(data);
             this.setState({ cart: data.cart ? data.cart : [] });
         })
 
@@ -81,11 +80,11 @@ class Home extends React.Component {
             </div>
         )
     }
-    componentDidUpdate() {
-        if (this.state.status === 'success') {
-            this.props.navigate('/login', { replace: true })
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.status !== this.state.status && this.state.status === 'success') {
+            this.props.navigate('/login', { replace: true });
         }
-        if (this.state.loggedIn) {
+        if (prevState.loggedIn !== this.state.loggedIn && this.state.loggedIn) {
             this.handleCartFetch();
         }
     }
@@ -97,18 +96,9 @@ class Home extends React.Component {
         this.handleProductsFetch();
     }
     checkTokenExpiration = async () => {
-        const token = Cookies.get('token');
-        if (token) {
-            try {
-                const res = await userAuth();
-                if (res.auth === 'failure') {
-                    Cookies.remove('token');
-                } else {
-                    this.setState({ loggedIn: true })
-                }
-            } catch (error) {
-                Cookies.remove('token');
-            }
+        const res = await userAuth();
+        if (res.auth === 'success') {
+            this.setState({ loggedIn: true })
         }
     }
     logout = () => {
